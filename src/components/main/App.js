@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DataEntry from '../data-entry/data-entry';
 import Teaspoons from '../teaspoon/teaspoons';
-
-const GRAMS_PER_TEASPOON = 4;
+import {toTeaspoons} from '../../lib/calculator';
 
 class App extends Component {
   state = {
@@ -11,8 +10,7 @@ class App extends Component {
   }
 
   calculate(input) {
-    // TODO deal with fractional units
-    const numTsp = Math.round(input / GRAMS_PER_TEASPOON);
+    const numTsp = toTeaspoons(input);
     this.setState({numTsp});
   }
 
