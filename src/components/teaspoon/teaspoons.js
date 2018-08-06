@@ -5,8 +5,11 @@ class Teaspoons extends Component {
 
   helper() {
     let result = [];
-    for (let i = 0; i < this.props.numTsp; i++) {
-      result.push(<Teaspoon key={i.toString()}/>);
+    for (let i = 0; i < this.props.wholeTsp; i++) {
+      result.push(<Teaspoon key={i.toString()} scale={1}/>);
+    }
+    if (this.props.fractionalTsp && this.props.fractionalTsp > 0) {
+      result.push(<Teaspoon key={this.props.fractionalTsp.toString()} scale={this.props.fractionalTsp}/>);
     }
     return result;
   }
