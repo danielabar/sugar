@@ -1,4 +1,4 @@
-import { toTeaspoons } from "./calculator";
+import { toTeaspoons, toFraction } from "./calculator";
 
 describe('calculator', () => {
   describe('toTeaspoons', () => {
@@ -10,6 +10,7 @@ describe('calculator', () => {
       // Then
       expect(result.whole).toEqual(1);
       expect(result.fraction).toEqual(0.5);
+      expect(result.divide).toEqual(1.5);
     });
 
     it('Sets fractional to zero when evenly divisible', () => {
@@ -20,6 +21,17 @@ describe('calculator', () => {
       // Then
       expect(result.whole).toEqual(2);
       expect(result.fraction).toEqual(0);
+      expect(result.divide).toEqual(2);
+    });
+  });
+
+  describe('toFraction', () => {
+    it('Converts decimal to fractional string', () => {
+      // Given
+      const input = 1.75;
+      // When
+      const result = toFraction(input);
+      expect(result).toEqual('1 3/4');
     });
   });
 });
