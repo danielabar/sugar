@@ -3,7 +3,7 @@ import './App.css';
 import DataEntry from '../data-entry/data-entry';
 import Message from '../message/message';
 import Teaspoons from '../teaspoon/teaspoons';
-import { toTeaspoons, toFraction } from '../../lib/calculator';
+import { toTeaspoons } from '../../lib/calculator';
 
 class App extends Component {
   state = {
@@ -13,11 +13,10 @@ class App extends Component {
 
   calculate(input) {
     const numTsp = toTeaspoons(input);
-    const displayTsp = toFraction(numTsp.divide);
     this.setState({
+      tsp: numTsp.divide,
       wholeTsp: numTsp.whole,
-      fractionalTsp: numTsp.fraction,
-      displayTsp: displayTsp
+      fractionalTsp: numTsp.fraction
     });
   }
 
@@ -25,7 +24,7 @@ class App extends Component {
     return (
       <div className="app">
         <DataEntry calculate={this.calculate.bind(this)} />
-        <Message numTsp={this.state.displayTsp} />
+        <Message tsp={this.state.tsp} />
         <Teaspoons wholeTsp={this.state.wholeTsp} fractionalTsp={this.state.fractionalTsp} />
       </div>
     );
