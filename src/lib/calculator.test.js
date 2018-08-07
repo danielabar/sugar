@@ -42,7 +42,7 @@ describe('calculator', () => {
       // When
       const result = generateMessage(tsp);
       // Then
-      expect(result).toEqual('That\'s a 3/4 teaspoon.')
+      expect(result).toEqual('That\'s a 3/4 teaspoon.');
     });
 
     it('Displays whole number and ends in period when tsp is 1', () => {
@@ -51,7 +51,7 @@ describe('calculator', () => {
       // When
       const result = generateMessage(tsp);
       // Then
-      expect(result).toEqual('That\'s 1 teaspoon.')
+      expect(result).toEqual('That\'s 1 teaspoon.');
     });
 
     it('Displays whole number, plural form and ends in period when tsp is 2', () => {
@@ -60,7 +60,7 @@ describe('calculator', () => {
       // When
       const result = generateMessage(tsp);
       // Then
-      expect(result).toEqual('That\'s 2 teaspoons.')
+      expect(result).toEqual('That\'s 2 teaspoons.');
     });
 
     it('Displays whole number, plural form and ends in exclamation when tsp is greater than 2', () => {
@@ -69,7 +69,7 @@ describe('calculator', () => {
       // When
       const result = generateMessage(tsp);
       // Then
-      expect(result).toEqual('That\'s 3 teaspoons!')
+      expect(result).toEqual('That\'s 3 teaspoons!');
     });
 
     it('Displays whole number and fraction, plural form and ends in period when tsp is between 1 and 2', () => {
@@ -78,7 +78,7 @@ describe('calculator', () => {
       // When
       const result = generateMessage(tsp);
       // Then
-      expect(result).toEqual('That\'s 1 1/4 teaspoons.')
+      expect(result).toEqual('That\'s 1 1/4 teaspoons.');
     });
 
     it('Displays whole number and fraction, plural form and ends in exclamation when tsp is greater than 2', () => {
@@ -87,7 +87,7 @@ describe('calculator', () => {
       // When
       const result = generateMessage(tsp);
       // Then
-      expect(result).toEqual('That\'s 2 1/2 teaspoons!')
+      expect(result).toEqual('That\'s 2 1/2 teaspoons!');
     });
   });
 });
