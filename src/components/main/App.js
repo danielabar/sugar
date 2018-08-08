@@ -30,10 +30,18 @@ class App extends Component {
     return null;
   }
 
+  onReset() {
+    this.setState({
+      tsp: 0,
+      wholeTsp: 0,
+      fractionalTsp: 0
+    });
+  }
+
   render() {
     return (
       <div className="app">
-        <DataEntry calculate={this.calculate.bind(this)} />
+        <DataEntry calculate={this.calculate.bind(this)} onReset={this.onReset.bind(this)}/>
         {this.renderMessage()}
         <Teaspoons wholeTsp={this.state.wholeTsp} fractionalTsp={this.state.fractionalTsp} />
       </div>

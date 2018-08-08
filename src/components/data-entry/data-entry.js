@@ -16,6 +16,13 @@ class DataEntry extends Component {
     })
   }
 
+  onReset() {
+    this.setState({
+      inputValue: ''
+    });
+    this.props.onReset();
+  }
+
   render() {
     return (
       <div className="data-entry">
@@ -26,6 +33,7 @@ class DataEntry extends Component {
           onChange={this.updateInputValue.bind(this)}
         />
         <button onClick={this.onSubmit.bind(this)}>How many teaspoons?</button>
+        <button onClick={this.onReset.bind(this)}>Reset</button>
       </div>
     )
   }
