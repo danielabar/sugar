@@ -7,6 +7,7 @@ import { toTeaspoons } from '../../lib/calculator';
 
 class App extends Component {
   state = {
+    tsp: 0,
     wholeTsp: 0,
     fractionalTsp: 0
   }
@@ -20,11 +21,20 @@ class App extends Component {
     });
   }
 
+  renderMessage() {
+    if (this.state.tsp !== 0) {
+      return (
+        <Message tsp={this.state.tsp} />
+      )
+    }
+    return null;
+  }
+
   render() {
     return (
       <div className="app">
         <DataEntry calculate={this.calculate.bind(this)} />
-        <Message tsp={this.state.tsp} />
+        {this.renderMessage()}
         <Teaspoons wholeTsp={this.state.wholeTsp} fractionalTsp={this.state.fractionalTsp} />
       </div>
     );
