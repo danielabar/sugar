@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Teaspoon from './teaspoon';
+import './teaspoons.css';
 
 class Teaspoons extends Component {
 
