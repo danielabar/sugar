@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './data-entry.css';
 
 class DataEntry extends Component {
   state = {
@@ -26,14 +27,19 @@ class DataEntry extends Component {
   render() {
     return (
       <div className="data-entry">
+        <label className="label" htmlFor="grams_sugar">Total Sugars</label>
         <input
+          id="grams_sugar"
           type="number"
+          className="input"
           value={this.state.inputValue}
-          placeholder="Enter grams of sugar"
           onChange={this.updateInputValue.bind(this)}
         />
-        <button onClick={this.onSubmit.bind(this)}>Show me</button>
-        <button onClick={this.onReset.bind(this)}>Reset</button>
+        <span className="units">grams</span>
+        <div className="actions">
+          <button onClick={this.onSubmit.bind(this)}>Show me</button>
+          <button onClick={this.onReset.bind(this)}>Reset</button>
+        </div>
       </div>
     )
   }

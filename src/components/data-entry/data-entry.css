@@ -1,0 +1,23 @@
+.label {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+.input {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  font-size: 17px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  text-align: center;
+  width: 50px;
+}
+
+.units {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-left: 3px;
+}
