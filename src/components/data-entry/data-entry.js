@@ -32,7 +32,7 @@ class DataEntry extends Component {
           placeholder="Enter grams of sugar"
           onChange={this.updateInputValue.bind(this)}
         />
-        <button onClick={this.onSubmit.bind(this)}>How many teaspoons?</button>
+        <button onClick={this.onSubmit.bind(this)}>Show me</button>
         <button onClick={this.onReset.bind(this)}>Reset</button>
       </div>
     )

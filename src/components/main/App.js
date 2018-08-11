@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './header';
 import DataEntry from '../data-entry/data-entry';
 import Message from '../message/message';
 import Teaspoons from '../teaspoon/teaspoons';
@@ -41,6 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <Header />
         <DataEntry calculate={this.calculate.bind(this)} onReset={this.onReset.bind(this)}/>
         {this.renderMessage()}
         <Teaspoons wholeTsp={this.state.wholeTsp} fractionalTsp={this.state.fractionalTsp} />
