@@ -1,6 +1,11 @@
 .data-entry {
   border-bottom: 5px solid #000;
+  margin-bottom: 15px;
   padding-bottom: 10px;
+}
+
+.data-entry__row {
+  margin-bottom: 10px;
 }
 
 .data-entry__label {
@@ -10,11 +15,13 @@
 }
 
 .data-entry__input {
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  font-size: 17px;
-  height: 40px;
-  line-height: 40px;
+  border: none;
+  border-bottom: 1px solid #bbb;
+  border-radius: 0;
+  font-size: 20px;
+  font-weight: 300;
+  height: 35px;
+  line-height: 35px;
   margin: 0;
   text-align: center;
   width: 50px;
