@@ -27,18 +27,18 @@ class DataEntry extends Component {
   render() {
     return (
       <div className="data-entry">
-        <label className="label" htmlFor="grams_sugar">Total Sugars</label>
+        <label className="data-entry__label" htmlFor="grams_sugar">Total Sugars</label>
         <input
           id="grams_sugar"
           type="number"
-          className="input"
+          className="data-entry__input"
           value={this.state.inputValue}
           onChange={this.updateInputValue.bind(this)}
         />
-        <span className="units">grams</span>
-        <div className="actions">
-          <button onClick={this.onSubmit.bind(this)}>Show me</button>
-          <button onClick={this.onReset.bind(this)}>Reset</button>
+        <span className="data-entry__units">grams</span>
+        <div className="data-entry__actions">
+          <button className="data-entry__btn data-entry__spacer" onClick={this.onSubmit.bind(this)}>Show me</button>
+          <button className="data-entry__btn" onClick={this.onReset.bind(this)}>Reset</button>
         </div>
       </div>
     )
