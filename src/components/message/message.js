@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { generateMessage } from '../../lib/calculator';
+import './message.css';
 
 class Message extends Component {
   generateDisplay() {
