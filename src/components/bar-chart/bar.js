@@ -11,9 +11,9 @@ class Bar extends Component {
     return (
       <div className="bar">
         <div className="bar__container">
-          <div class="bar__inner" style={this.barStyle()}>
+          <div className="bar__inner" style={this.barStyle()}>
           </div>
-          <span class="bar__label">40%</span>
+          <span className="bar__label">40%</span>
         </div>
         <div className="bar__icon">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 502.479 502.479">
