@@ -26,5 +26,13 @@ describe('formatter', () => {
       // Then
       expect(result).toEqual("132%");
     });
+    it('Rounds and truncates decimals', () => {
+      // Given
+      const input = 1.088;
+      // When
+      const result = toPercentage(input);
+      // Then
+      expect(result).toEqual("109%");
+    })
   });
 });

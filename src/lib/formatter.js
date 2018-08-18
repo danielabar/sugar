@@ -1,5 +1,5 @@
 function toPercentage(input) {
-  const numericPercent = input * 100;
+  const numericPercent = Math.round(input * 100);
   return `${numericPercent}%`;
 }
 
