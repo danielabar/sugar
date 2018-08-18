@@ -14,8 +14,8 @@ class App extends Component {
     fractionalTsp: 0
   }
 
-  calculate(input) {
-    const numTsp = toTeaspoons(input);
+  calculate(grams) {
+    const numTsp = toTeaspoons(grams);
     this.setState({
       tsp: numTsp.divide,
       wholeTsp: numTsp.whole,

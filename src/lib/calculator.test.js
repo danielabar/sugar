@@ -4,9 +4,9 @@ describe('calculator', () => {
   describe('toTeaspoons', () => {
     it('Calculates whole and fractional units', () => {
       // Given
-      const input = 6;
+      const grams = 6;
       // When
-      const result = toTeaspoons(input);
+      const result = toTeaspoons(grams);
       // Then
       expect(result.whole).toEqual(1);
       expect(result.fraction).toEqual(0.5);
@@ -15,9 +15,9 @@ describe('calculator', () => {
 
     it('Sets fractional to zero when evenly divisible', () => {
       // Given
-      const input = 8;
+      const grams = 8;
       // When
-      const result = toTeaspoons(input);
+      const result = toTeaspoons(grams);
       // Then
       expect(result.whole).toEqual(2);
       expect(result.fraction).toEqual(0);
@@ -28,9 +28,9 @@ describe('calculator', () => {
   describe('toFraction', () => {
     it('Converts decimal to fractional string', () => {
       // Given
-      const input = 1.75;
+      const grams = 1.75;
       // When
-      const result = toFraction(input);
+      const result = toFraction(grams);
       expect(result).toEqual('1 3/4');
     });
   });
