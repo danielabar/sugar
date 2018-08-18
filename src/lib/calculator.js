@@ -1,6 +1,12 @@
 import Fraction from 'fractional';
 
 const GRAMS_PER_TEASPOON = 4;
+const CALORIES_PER_GRAM_SUGAR = 4;
+const WHO_PERCENTAGE_SUGAR_DAILY_CALORIES = 0.05;
+const FEMALE_DAILY_CALORIES = 2000;
+const MALE_DAILY_CALORIES = 2500;
+const FEMALE_MAX_SUGAR_GRAMS = (FEMALE_DAILY_CALORIES * WHO_PERCENTAGE_SUGAR_DAILY_CALORIES) / CALORIES_PER_GRAM_SUGAR;
+const MALE_MAX_SUGAR_GRAMS = (MALE_DAILY_CALORIES * WHO_PERCENTAGE_SUGAR_DAILY_CALORIES) / CALORIES_PER_GRAM_SUGAR;
 
 const toTeaspoons = (grams) => {
   const divide = grams / GRAMS_PER_TEASPOON;
@@ -22,8 +28,22 @@ const generateMessage = (tsp) => {
   return `That's ${indefiniteArticle}${actualDisplayTsp} ${noun}${exclaim}`;
 }
 
+/*
+male 	2500 calories -> 5% -> 125 calories / 4 = 31.25g
+woman 	2000 calories -> 5% -> 100 calories / 4 = 25g
+eg: 25g = 100%
+input 10g = 10/25 = 0.4 * 100 = 40%
+*/
+const percentageRecommended = (grams) => {
+  return {
+    female: grams / FEMALE_MAX_SUGAR_GRAMS,
+    male: grams / MALE_MAX_SUGAR_GRAMS
+  };
+}
+
 export {
   toTeaspoons,
   toFraction,
-  generateMessage
+  generateMessage,
+  percentageRecommended
 };

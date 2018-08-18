@@ -1,4 +1,4 @@
-import { toTeaspoons, toFraction, generateMessage } from "./calculator";
+import { toTeaspoons, toFraction, generateMessage, percentageRecommended } from "./calculator";
 
 describe('calculator', () => {
   describe('toTeaspoons', () => {
@@ -88,6 +88,36 @@ describe('calculator', () => {
       const result = generateMessage(tsp);
       // Then
       expect(result).toEqual('That\'s 2 1/2 teaspoons!');
+    });
+  });
+
+  describe('percentageRecommended', () => {
+    it('Calculates WHO percentage of daily recommended intake for men and women', () => {
+      // Given
+      const grams = 10;
+      // When
+      const result = percentageRecommended(grams);
+      // Then
+      expect(result.female).toEqual(0.4);
+      expect(result.male).toEqual(0.32);
+    });
+    it('Calculates 100% for women and 80% for men', () => {
+      // Given
+      const grams = 25;
+      // When
+      const result = percentageRecommended(grams);
+      // Then
+      expect(result.female).toEqual(1);
+      expect(result.male).toEqual(0.8);
+    });
+    it('Calculates 100% for men and ??? for women', () => {
+      // Given
+      const grams = 31.25;
+      // When
+      const result = percentageRecommended(grams);
+      // Then
+      expect(result.female).toEqual(1.25);
+      expect(result.male).toEqual(1);
     });
   });
 });
