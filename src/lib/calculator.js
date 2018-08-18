@@ -8,18 +8,18 @@ const MALE_DAILY_CALORIES = 2500;
 const FEMALE_MAX_SUGAR_GRAMS = (FEMALE_DAILY_CALORIES * WHO_PERCENTAGE_SUGAR_DAILY_CALORIES) / CALORIES_PER_GRAM_SUGAR;
 const MALE_MAX_SUGAR_GRAMS = (MALE_DAILY_CALORIES * WHO_PERCENTAGE_SUGAR_DAILY_CALORIES) / CALORIES_PER_GRAM_SUGAR;
 
-const toTeaspoons = (grams) => {
+function toTeaspoons (grams) {
   const divide = grams / GRAMS_PER_TEASPOON;
   const whole = Math.floor(divide);
   const fraction = divide - Math.floor(divide);
   return { whole, fraction, divide };
 }
 
-const toFraction = (input) => {
+function toFraction (input) {
   return new Fraction.Fraction(input).toString();
 }
 
-const generateMessage = (tsp) => {
+function generateMessage (tsp) {
   const displayTsp = toFraction(tsp);
   const indefiniteArticle = tsp < 1 ? 'a' : '';
   const noun = tsp <= 1 ? 'teaspoon' : 'teaspoons';
@@ -34,11 +34,12 @@ woman 	2000 calories -> 5% -> 100 calories / 4 = 25g
 eg: 25g = 100%
 input 10g = 10/25 = 0.4 * 100 = 40%
 */
-const percentageRecommended = (grams) => {
+
+function percentageRecommended(grams) {
   return {
     female: grams / FEMALE_MAX_SUGAR_GRAMS,
     male: grams / MALE_MAX_SUGAR_GRAMS
-  };
+  }
 }
 
 export {
