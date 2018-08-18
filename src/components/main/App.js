@@ -11,7 +11,9 @@ class App extends Component {
   state = {
     tsp: 0,
     wholeTsp: 0,
-    fractionalTsp: 0
+    fractionalTsp: 0,
+    femaleFraction: 0,
+    maleFraction: 0
   }
 
   calculate(grams) {
@@ -35,6 +37,15 @@ class App extends Component {
     return null;
   }
 
+  renderBarChart() {
+    if (this.state.femaleFraction !== 0) {
+      return (
+        <BarChart femaleFraction={this.state.femaleFraction} maleFraction={this.state.maleFraction} />
+      )
+    }
+    return null;
+  }
+
   onReset() {
     this.setState({
       tsp: 0,
@@ -50,7 +61,7 @@ class App extends Component {
         <DataEntry calculate={this.calculate.bind(this)} onReset={this.onReset.bind(this)}/>
         {this.renderMessage()}
         <Teaspoons wholeTsp={this.state.wholeTsp} fractionalTsp={this.state.fractionalTsp} />
-        <BarChart femaleFraction={this.state.femaleFraction} maleFraction={this.state.maleFraction} />
+        {this.renderBarChart()}
       </div>
     );
   }
