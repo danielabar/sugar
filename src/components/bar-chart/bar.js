@@ -4,7 +4,7 @@ import './bar.css';
 class Bar extends Component {
   barStyle() {
     return {
-      width: "40%"
+      width: this.props.percentDisplay
     };
   }
   render() {
@@ -13,7 +13,7 @@ class Bar extends Component {
         <div className="bar__container">
           <div className="bar__inner" style={this.barStyle()}>
           </div>
-          <span className="bar__label">40%</span>
+          <span className="bar__label">{this.props.percentDisplay}</span>
         </div>
         <div className="bar__icon">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 502.479 502.479">
