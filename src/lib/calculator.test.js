@@ -110,7 +110,7 @@ describe('calculator', () => {
       expect(result.female).toEqual(1);
       expect(result.male).toEqual(0.8);
     });
-    it('Calculates 100% for men and ??? for women', () => {
+    it('Calculates 100% for men and 125% for women', () => {
       // Given
       const grams = 31.25;
       // When
