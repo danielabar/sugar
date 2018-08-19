@@ -50,7 +50,9 @@ class App extends Component {
     this.setState({
       tsp: 0,
       wholeTsp: 0,
-      fractionalTsp: 0
+      fractionalTsp: 0,
+      femaleFraction: 0,
+      maleFraction: 0
     });
   }
 
