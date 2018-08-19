@@ -5,13 +5,14 @@ import DataEntry from '../data-entry/data-entry';
 import Message from '../message/message';
 import Teaspoons from '../teaspoon/teaspoons';
 import BarChart from '../bar-chart/bar-chart';
-import { toTeaspoons, percentageRecommended } from '../../lib/calculator';
+import { toTeaspoons, percentageRecommended, generateMessage } from '../../lib/calculator';
 
 class App extends Component {
   state = {
     tsp: 0,
     wholeTsp: 0,
     fractionalTsp: 0,
+    tspMessage: '',
     femaleFraction: 0,
     maleFraction: 0
   }
@@ -23,15 +24,25 @@ class App extends Component {
       tsp: numTsp.divide,
       wholeTsp: numTsp.whole,
       fractionalTsp: numTsp.fraction,
+      tspMessage: generateMessage(numTsp.divide),
       femaleFraction: perRecom.female,
       maleFraction: perRecom.male
     });
   }
 
-  renderMessage() {
+  renderTspMessage() {
     if (this.state.tsp !== 0) {
       return (
-        <Message tsp={this.state.tsp} />
+        <Message display={this.state.tspMessage} />
+      )
+    }
+    return null;
+  }
+
+  renderBarChartMessage() {
+    if (this.state.tsp !== 0) {
+      return (
+        <Message display="Percentage of daily recommended intake" />
       )
     }
     return null;
@@ -51,6 +62,7 @@ class App extends Component {
       tsp: 0,
       wholeTsp: 0,
       fractionalTsp: 0,
+      tspMessage: '',
       femaleFraction: 0,
       maleFraction: 0
     });
@@ -61,8 +73,9 @@ class App extends Component {
       <div className="app">
         <Header />
         <DataEntry calculate={this.calculate.bind(this)} onReset={this.onReset.bind(this)}/>
-        {this.renderMessage()}
+        {this.renderTspMessage()}
         <Teaspoons wholeTsp={this.state.wholeTsp} fractionalTsp={this.state.fractionalTsp} />
+        {this.renderBarChartMessage()}
         {this.renderBarChart()}
       </div>
     );
