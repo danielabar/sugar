@@ -62,6 +62,10 @@ class Bar extends Component {
         <div className="bar__icon">
           {this.getIcon()}
         </div>
+        <div className="bar__axis">
+          <div className="bar__axis__label bar__axis__left">0</div>
+          <div className="bar__axis__label bar__axis__right">999</div>
+        </div>
       </div>
     )
   }
