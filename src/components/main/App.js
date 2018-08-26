@@ -26,7 +26,9 @@ class App extends Component {
       fractionalTsp: numTsp.fraction,
       tspMessage: generateMessage(numTsp.divide),
       femaleFraction: perRecom.female,
-      maleFraction: perRecom.male
+      femaleMax: perRecom.femaleMax,
+      maleFraction: perRecom.male,
+      maleMax: perRecom.maleMax
     });
   }
 
@@ -42,7 +44,7 @@ class App extends Component {
   renderBarChartMessage() {
     if (this.state.tsp !== 0) {
       return (
-        <Message display="Percentage of daily recommended intake" />
+        <Message display="% of daily recommended intake" />
       )
     }
     return null;
@@ -51,7 +53,12 @@ class App extends Component {
   renderBarChart() {
     if (this.state.femaleFraction !== 0) {
       return (
-        <BarChart femaleFraction={this.state.femaleFraction} maleFraction={this.state.maleFraction} />
+        <BarChart
+          femaleFraction={this.state.femaleFraction}
+          femaleMax={this.state.femaleMax}
+          maleFraction={this.state.maleFraction}
+          maleMax={this.state.maleMax}
+        />
       )
     }
     return null;

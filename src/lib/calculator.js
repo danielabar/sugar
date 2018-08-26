@@ -38,7 +38,9 @@ input 10g = 10/25 = 0.4 * 100 = 40%
 function percentageRecommended(grams) {
   return {
     female: grams / FEMALE_MAX_SUGAR_GRAMS,
-    male: grams / MALE_MAX_SUGAR_GRAMS
+    femaleMax: FEMALE_MAX_SUGAR_GRAMS,
+    male: grams / MALE_MAX_SUGAR_GRAMS,
+    maleMax: MALE_MAX_SUGAR_GRAMS
   }
 }
 

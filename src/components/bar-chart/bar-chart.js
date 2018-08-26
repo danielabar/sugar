@@ -7,8 +7,8 @@ class BarChart extends Component {
   render() {
     return (
       <div className="bar-chart">
-        <Bar icon="female" percentDisplay={toPercentage(this.props.femaleFraction)}/>
-        <Bar icon="male" percentDisplay={toPercentage(this.props.maleFraction)}/>
+        <Bar icon="female" percentDisplay={toPercentage(this.props.femaleFraction)} maxGrams={this.props.femaleMax}/>
+        <Bar icon="male" percentDisplay={toPercentage(this.props.maleFraction)} maxGrams={this.props.maleMax}/>
       </div>
     )
   }
