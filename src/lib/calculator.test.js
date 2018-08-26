@@ -1,12 +1,12 @@
-import { toTeaspoons, toFraction, generateMessage } from "./calculator";
+import { toTeaspoons, toFraction, generateMessage, percentageRecommended } from "./calculator";
 
 describe('calculator', () => {
   describe('toTeaspoons', () => {
     it('Calculates whole and fractional units', () => {
       // Given
-      const input = 6;
+      const grams = 6;
       // When
-      const result = toTeaspoons(input);
+      const result = toTeaspoons(grams);
       // Then
       expect(result.whole).toEqual(1);
       expect(result.fraction).toEqual(0.5);
@@ -15,9 +15,9 @@ describe('calculator', () => {
 
     it('Sets fractional to zero when evenly divisible', () => {
       // Given
-      const input = 8;
+      const grams = 8;
       // When
-      const result = toTeaspoons(input);
+      const result = toTeaspoons(grams);
       // Then
       expect(result.whole).toEqual(2);
       expect(result.fraction).toEqual(0);
@@ -28,9 +28,9 @@ describe('calculator', () => {
   describe('toFraction', () => {
     it('Converts decimal to fractional string', () => {
       // Given
-      const input = 1.75;
+      const grams = 1.75;
       // When
-      const result = toFraction(input);
+      const result = toFraction(grams);
       expect(result).toEqual('1 3/4');
     });
   });
@@ -88,6 +88,36 @@ describe('calculator', () => {
       const result = generateMessage(tsp);
       // Then
       expect(result).toEqual('That\'s 2 1/2 teaspoons!');
+    });
+  });
+
+  describe('percentageRecommended', () => {
+    it('Calculates WHO percentage of daily recommended intake for men and women', () => {
+      // Given
+      const grams = 10;
+      // When
+      const result = percentageRecommended(grams);
+      // Then
+      expect(result.female).toEqual(0.4);
+      expect(result.male).toEqual(0.32);
+    });
+    it('Calculates 100% for women and 80% for men', () => {
+      // Given
+      const grams = 25;
+      // When
+      const result = percentageRecommended(grams);
+      // Then
+      expect(result.female).toEqual(1);
+      expect(result.male).toEqual(0.8);
+    });
+    it('Calculates 100% for men and 125% for women', () => {
+      // Given
+      const grams = 31.25;
+      // When
+      const result = percentageRecommended(grams);
+      // Then
+      expect(result.female).toEqual(1.25);
+      expect(result.male).toEqual(1);
     });
   });
 });

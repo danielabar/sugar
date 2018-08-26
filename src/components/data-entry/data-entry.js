@@ -3,23 +3,23 @@ import './data-entry.css';
 
 class DataEntry extends Component {
   state = {
-    inputValue: ''
+    grams: ''
   }
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.calculate(this.state.inputValue);
+    this.props.calculate(this.state.grams);
   }
 
-  updateInputValue(e) {
+  updateGrams(e) {
     this.setState({
-      inputValue: e.target.value
+      grams: e.target.value
     })
   }
 
   onReset() {
     this.setState({
-      inputValue: ''
+      grams: ''
     });
     this.props.onReset();
   }
@@ -33,8 +33,8 @@ class DataEntry extends Component {
             id="grams_sugar"
             type="number"
             className="data-entry__input"
-            value={this.state.inputValue}
-            onChange={this.updateInputValue.bind(this)}
+            value={this.state.grams}
+            onChange={this.updateGrams.bind(this)}
           />
           <span className="data-entry__units">grams</span>
         </div>

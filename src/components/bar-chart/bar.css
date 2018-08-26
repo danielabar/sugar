@@ -1,0 +1,51 @@
+.bar {
+  margin-bottom: 5px;
+}
+
+.bar__container {
+  border: 1px solid #000;
+  border-radius: 1px;
+  width: 70%;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.bar__inner {
+  background: red;
+  height: 18px;
+  opacity: 0.50
+}
+
+.bar__label {
+  left: 40%;
+  position: absolute;
+  top: 0px;
+}
+
+.bar__icon {
+  display: inline-block;
+}
+
+.bar__axis {
+  height: 10px;
+  margin-top: -1px;
+  position: relative;
+  width: 70%;
+}
+
+.bar__axis__label {
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 200;
+}
+
+.bar__axis__left {
+  left: 1px;
+  position: absolute;
+}
+
+.bar__axis__right {
+  position: absolute;
+  right: 0;
+}
