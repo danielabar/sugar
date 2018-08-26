@@ -1,5 +1,5 @@
 .data-entry {
-  border-bottom: 5px solid #000;
+  border-bottom: 5px solid #333;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
@@ -40,7 +40,7 @@
 
 .data-entry__btn {
   background: #fff;
-  border: 1px solid #000;
+  border: 1px solid #333;
   border-radius: 5px;
   display: inline-block;
   font-size: 15px;

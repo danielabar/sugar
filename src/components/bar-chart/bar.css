@@ -3,7 +3,7 @@
 }
 
 .bar__container {
-  border: 1px solid #000;
+  border: 1px solid #333;
   border-radius: 1px;
   width: 70%;
   height: 20px;
@@ -25,6 +25,11 @@
 
 .bar__icon {
   display: inline-block;
+}
+
+.bar__icon__path {
+  fill: #333;
+  stroke: #333;
 }
 
 .bar__axis {

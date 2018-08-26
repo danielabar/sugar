@@ -35,7 +35,7 @@ class Bar extends Component {
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 53.545 53.545">
         <g>
           <circle cx="26.686" cy="4.507" r="4.507"/>
-          <path d="M28.256,11.163c-1.123-0.228-2.344-0.218-3.447,0.042c-7.493,0.878-9.926,9.551-9.239,16.164
+          <path className="bar__icon__path" d="M28.256,11.163c-1.123-0.228-2.344-0.218-3.447,0.042c-7.493,0.878-9.926,9.551-9.239,16.164
             c0.298,2.859,4.805,2.889,4.504,0c-0.25-2.41-0.143-6.047,1.138-8.632c0,3.142,0,6.284,0,9.425c0,0.111,0.011,0.215,0.016,0.322
             c-0.003,0.051-0.015,0.094-0.015,0.146c0,7.479-0.013,14.955-0.322,22.428c-0.137,3.322,5.014,3.309,5.15,0
             c0.242-5.857,0.303-11.717,0.317-17.578c0.244,0.016,0.488,0.016,0.732,0.002c0.015,5.861,0.074,11.721,0.314,17.576
@@ -64,7 +64,7 @@ class Bar extends Component {
         </div>
         <div className="bar__axis">
           <div className="bar__axis__label bar__axis__left">0</div>
-          <div className="bar__axis__label bar__axis__right">MAX {this.props.maxGrams} g</div>
+          <div className="bar__axis__label bar__axis__right">max {this.props.maxGrams} g</div>
         </div>
       </div>
     )
