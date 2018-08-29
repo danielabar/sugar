@@ -3,7 +3,10 @@ import './data-entry.css';
 
 class DataEntry extends Component {
   state = {
-    grams: ''
+    grams: '',
+    touched: {
+      grams: false
+    }
   }
 
   onSubmit(e) {
@@ -19,14 +22,21 @@ class DataEntry extends Component {
 
   onReset() {
     this.setState({
-      grams: ''
+      grams: '',
+      touched: {
+        grams: false
+      }
     });
     this.props.onReset();
   }
 
-  // should delegate logic to lib/validator.js
-  // need "dirty checking" - do not validate until user has interacted with element
-  // alos need to disable SHOW ME button
+  handleBlur = (field) => (evt) => {
+    this.setState({
+      touched: { ...this.state.touched, [field]: true },
+    });
+  }
+
+  // should delegate logic to lib/validator.js, use constants for min, max
   validate(grams) {
     let result = {};
     const intGrams = parseInt(grams, 10);
@@ -42,6 +52,12 @@ class DataEntry extends Component {
     const errors = this.validate(this.state.grams);
     const isDisabled = Object.keys(errors).some(x => errors[x]);
 
+    const shouldMarkError = (field) => {
+      const hasError = errors[field];
+      const shouldShow = this.state.touched[field];
+      return hasError ? shouldShow : false;
+    };
+
     return (
       <div className="data-entry">
         <div className="data-entry__row">
@@ -49,7 +65,8 @@ class DataEntry extends Component {
           <input
             id="grams_sugar"
             type="number"
-            className={errors.grams ? "data-entry__input error" : "data-entry__input"}
+            className={shouldMarkError('grams') ? "data-entry__input error" : "data-entry__input"}
+            onBlur={this.handleBlur('grams')}
             value={this.state.grams}
             onChange={this.updateGrams.bind(this)}
           />
