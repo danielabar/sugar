@@ -24,7 +24,22 @@ class DataEntry extends Component {
     this.props.onReset();
   }
 
+  // should delegate logic to lib/validator.js
+  // need "dirty checking" - do not validate until user has interacted with element
+  // alos need to disable SHOW ME button
+  validate(grams) {
+    const intGrams = parseInt(grams, 10);
+    let result = { valid: true, message: null };
+    if (!Number.isInteger(intGrams) || intGrams < 1 || intGrams > 50) {
+      result.valid = false;
+      result.message = 'Please enter a number between 1 and 50';
+    }
+    return result;
+  }
+
   render() {
+    const errors = this.validate(this.state.grams);
+    console.log(errors);
     return (
       <div className="data-entry">
         <div className="data-entry__row">
