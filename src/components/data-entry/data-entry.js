@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { validateGrams } from '../../lib/validator';
 import './data-entry.css';
 
 class DataEntry extends Component {
@@ -36,20 +37,8 @@ class DataEntry extends Component {
     });
   }
 
-  // should delegate logic to lib/validator.js, use constants for min, max
-  validate(grams) {
-    let result = {};
-    const intGrams = parseInt(grams, 10);
-    if (!Number.isInteger(intGrams) || intGrams < 1 || intGrams > 50) {
-      result = {
-        grams: { hasError: true, message: 'Please enter a number between 1 and 50'}
-      }
-    }
-    return result;
-  }
-
   render() {
-    const errors = this.validate(this.state.grams);
+    const errors = validateGrams(this.state.grams);
     const isDisabled = Object.keys(errors).some(x => errors[x]);
 
     const shouldMarkError = (field) => {
