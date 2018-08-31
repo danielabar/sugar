@@ -18,7 +18,7 @@ class Bar extends Component {
   femaleIcon() {
     return (
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 502.479 502.479">
-        <g>
+        <g data-test="female-icon">
           <g>
             <path d="M251.239,127.907c17.705,0,32.783-6.232,45.253-18.7c12.474-12.467,18.699-27.554,18.699-45.253
               c0-17.705-6.226-32.783-18.699-45.255C284.022,6.233,268.938,0,251.239,0c-17.704,0-32.789,6.23-45.254,18.699
@@ -40,7 +40,7 @@ class Bar extends Component {
   maleIcon() {
     return (
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 53.545 53.545">
-        <g>
+        <g data-test="male-icon">
           <circle cx="26.686" cy="4.507" r="4.507"/>
           <path className="bar__icon__path" d="M28.256,11.163c-1.123-0.228-2.344-0.218-3.447,0.042c-7.493,0.878-9.926,9.551-9.239,16.164
             c0.298,2.859,4.805,2.889,4.504,0c-0.25-2.41-0.143-6.047,1.138-8.632c0,3.142,0,6.284,0,9.425c0,0.111,0.011,0.215,0.016,0.322
@@ -70,9 +70,9 @@ class Bar extends Component {
     return (
       <div className="bar">
         <div className="bar__container">
-          <div className="bar__inner" ref={this.barInnerRef} style={this.barStyle()}>
+          <div className="bar__inner" ref={this.barInnerRef} style={this.barStyle()} data-test="bar-inner">
           </div>
-          <span className="bar__label">{this.props.percentDisplay}</span>
+          <span className="bar__label" data-test="bar-label">{this.props.percentDisplay}</span>
         </div>
         <div className="bar__icon">
           {this.getIcon()}
