@@ -7,10 +7,10 @@ class Teaspoons extends Component {
   helper() {
     let result = [];
     for (let i = 0; i < this.props.wholeTsp; i++) {
-      result.push(<Teaspoon key={i.toString()} scale={1}/>);
+      result.push(<Teaspoon key={i.toString()} scale={1} indexNum={i+1}/>);
     }
     if (this.props.fractionalTsp && this.props.fractionalTsp > 0) {
-      result.push(<Teaspoon key={this.props.fractionalTsp.toString()} scale={this.props.fractionalTsp}/>);
+      result.push(<Teaspoon key={this.props.fractionalTsp.toString()} scale={this.props.fractionalTsp} indexNum={this.props.wholeTsp + 1}/>);
     }
     return result;
   }

@@ -1,3 +1,13 @@
+.teaspoon {
+  transform: scaleX(0) scaleY(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.teaspoon__to-full-size {
+  transform: scaleX(1) scaleY(1);
+}
+
 .teaspoon__path {
   fill: silver;
   stroke: #333;
