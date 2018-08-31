@@ -2,7 +2,7 @@
   "name": "sugar",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://danielabar.github.io/sugar",
+  "homepage": "http://sugartsp.site",
   "dependencies": {
     "fractional": "1.0.0",
     "gh-pages": "1.2.0",
