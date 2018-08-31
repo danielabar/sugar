@@ -2,14 +2,27 @@
 
 > How many teaspoons in that???
 
+### References:
+- [React form validation](https://goshakkk.name/instant-form-fields-validation-react/)
+- [Enzyme component DOM testing](http://airbnb.io/enzyme/docs/api/ShallowWrapper/simulate.html)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+### Run tests with coverage
+
+```shell
+npm test -- --coverage
+open coverage/lcov-report/index.html
+```
+
 ## Table of Contents
 
 - [Sugar](#sugar)
+    - [References:](#references)
+    - [Run tests with coverage](#run-tests-with-coverage)
   - [Table of Contents](#table-of-contents)
   - [Updating to New Releases](#updating-to-new-releases)
   - [Sending Feedback](#sending-feedback)
@@ -124,7 +137,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
       - [Step 1: Add `homepage` to `package.json`](#step-1-add-homepage-to-packagejson)
       - [Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`](#step-2-install-gh-pages-and-add-deploy-to-scripts-in-packagejson)
       - [Step 3: Deploy the site by running `npm run deploy`](#step-3-deploy-the-site-by-running-npm-run-deploy)
-      - [Step 4: Ensure your project’s settings use `gh-pages`](#step-4-ensure-your-project%E2%80%99s-settings-use-gh-pages)
+      - [Step 4: Ensure your project’s settings use `gh-pages`](#step-4-ensure-your-projects-settings-use-gh-pages)
       - [Step 5: Optionally, configure the domain](#step-5-optionally-configure-the-domain)
       - [Notes on client-side routing](#notes-on-client-side-routing)
       - [Troubleshooting](#troubleshooting)
@@ -139,7 +152,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
     - [Surge](#surge)
   - [Advanced Configuration](#advanced-configuration)
   - [Troubleshooting](#troubleshooting)
-    - [`npm start` doesn’t detect changes](#npm-start-doesn%E2%80%99t-detect-changes)
+    - [`npm start` doesn’t detect changes](#npm-start-doesnt-detect-changes)
     - [`npm test` hangs on macOS Sierra](#npm-test-hangs-on-macos-sierra)
     - [`npm run build` exits too early](#npm-run-build-exits-too-early)
     - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
