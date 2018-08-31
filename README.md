@@ -19,11 +19,18 @@ npm test -- --coverage
 open coverage/lcov-report/index.html
 ```
 
+### Deploy
+
+```shell
+npm run deploy
+```
+
 ## Table of Contents
 
 - [Sugar](#sugar)
     - [References:](#references)
     - [Run tests with coverage](#run-tests-with-coverage)
+    - [Deploy](#deploy)
   - [Table of Contents](#table-of-contents)
   - [Updating to New Releases](#updating-to-new-releases)
   - [Sending Feedback](#sending-feedback)
