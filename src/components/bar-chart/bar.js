@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './bar.css';
 
 class Bar extends Component {
+  constructor(props) {
+    super(props);
+    this.barInnerRef = React.createRef();
+  }
+
   barStyle() {
     return {
       width: this.props.percentDisplay
@@ -51,11 +56,19 @@ class Bar extends Component {
     return this.props.icon === 'female' ? this.femaleIcon() : this.maleIcon();
   }
 
+  animate() {
+    this.barInnerRef.current.className += ' to-full-size';
+  }
+  componentDidMount() {
+    setTimeout(this.animate.bind(this), 50);
+  }
+
+
   render() {
     return (
       <div className="bar">
         <div className="bar__container">
-          <div className="bar__inner" style={this.barStyle()}>
+          <div className="bar__inner" ref={this.barInnerRef} style={this.barStyle()}>
           </div>
           <span className="bar__label">{this.props.percentDisplay}</span>
         </div>

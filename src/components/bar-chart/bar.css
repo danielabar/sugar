@@ -14,7 +14,14 @@
 .bar__inner {
   background: red;
   height: 18px;
-  opacity: 0.50
+  opacity: 0.50;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.to-full-size {
+  transform: scaleX(1);
 }
 
 .bar__label {
