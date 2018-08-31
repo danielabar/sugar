@@ -20,7 +20,7 @@
   transition: transform 0.4s ease;
 }
 
-.to-full-size {
+.bar__inner-to-full-size {
   transform: scaleX(1);
 }
 

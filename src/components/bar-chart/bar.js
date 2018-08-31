@@ -59,7 +59,7 @@ class Bar extends Component {
   }
 
   animate() {
-    this.barInnerRef.current.className += ' to-full-size';
+    this.barInnerRef.current.className += ' bar__inner-to-full-size';
   }
 
   componentDidMount() {
