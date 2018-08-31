@@ -5,6 +5,7 @@
 ### References:
 - [React form validation](https://goshakkk.name/instant-form-fields-validation-react/)
 - [Enzyme component DOM testing](http://airbnb.io/enzyme/docs/api/ShallowWrapper/simulate.html)
+- [Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
