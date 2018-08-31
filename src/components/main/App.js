@@ -58,6 +58,7 @@ class App extends Component {
           femaleMax={this.state.femaleMax}
           maleFraction={this.state.maleFraction}
           maleMax={this.state.maleMax}
+          numTsp={this.state.wholeTsp}
         />
       )
     }

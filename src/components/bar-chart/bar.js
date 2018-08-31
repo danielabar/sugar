@@ -61,7 +61,7 @@ class Bar extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.animate.bind(this), 50);
+    setTimeout(this.animate.bind(this), 200 * this.props.numTsp + 1);
   }
 
   render() {

@@ -17,7 +17,7 @@
   opacity: 0.50;
   transform: scaleX(0);
   transform-origin: top left;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .to-full-size {
