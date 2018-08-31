@@ -15,12 +15,14 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ```shell
 npm test -- --coverage
+open coverage/lcov-report/index.html
 ```
 
 ## Table of Contents
 
 - [Sugar](#sugar)
     - [References:](#references)
+    - [Run tests with coverage](#run-tests-with-coverage)
   - [Table of Contents](#table-of-contents)
   - [Updating to New Releases](#updating-to-new-releases)
   - [Sending Feedback](#sending-feedback)
