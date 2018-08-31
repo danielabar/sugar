@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './bar.css';
 
+const ANIMATION_DELAY_MS = 150;
+
 class Bar extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +63,7 @@ class Bar extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.animate.bind(this), 200 * this.props.numTsp + 1);
+    setTimeout(this.animate.bind(this), ANIMATION_DELAY_MS * this.props.numTsp);
   }
 
   render() {

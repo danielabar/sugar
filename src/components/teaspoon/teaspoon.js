@@ -3,6 +3,7 @@ import './teaspoon.css';
 
 const DEFAULT_WIDTH = 50;
 const SCALE_ADJUST = 0.3;
+const ANIMATION_DELAY_MS = 100;
 
 class Teaspoon extends Component {
   constructor(props) {
@@ -20,11 +21,10 @@ class Teaspoon extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.animate.bind(this), 100 * this.props.indexNum);
+    setTimeout(this.animate.bind(this), ANIMATION_DELAY_MS * this.props.indexNum);
   }
 
   render() {
-    console.log(`=== TEASPOON: ${this.props.key}`)
     return (
       <div ref={this.tspRef} className="teaspoon">
         <svg xmlns="http://www.w3.org/2000/svg" width={this.calcDimension()} height={this.calcDimension()} viewBox="0 0 50 50">
